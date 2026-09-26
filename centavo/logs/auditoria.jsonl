@@ -1,0 +1,18 @@
+{"ts": "2026-09-26T20:38:06+00:00", "fase": "inicio", "evento": "ejecución", "meta_usd": 0.01, "python": "3.11.15"}
+{"ts": "2026-09-26T20:38:06+00:00", "fase": "billetera", "evento": "autotest BIP-173 OK"}
+{"ts": "2026-09-26T20:38:06+00:00", "fase": "billetera", "evento": "generada", "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac", "clave_privada": "(guardada en .wallet/, fuera de git)"}
+{"ts": "2026-09-26T20:38:06+00:00", "fase": "mapeo", "evento": "sondeando fuentes", "total": 10}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet BTC testnet4 (faucet.testnet4.dev)", "motivo": "exige captcha; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet BTC testnet (coinfaucet.eu)", "motivo": "exige captcha; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet ETH Sepolia (Alchemy)", "motivo": "exige captcha; exige cuenta/login; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet ETH Sepolia (sepoliafaucet.com)", "motivo": "exige captcha; exige cuenta/login; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Micro-faucets mainnet (FaucetPay)", "motivo": "exige captcha; exige cuenta/login"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet BTC mainnet (freebitco.in)", "motivo": "inaccesible (HTTP 502)"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Lightning (lightningfaucet.com)", "motivo": "exige captcha; exige cuenta/login"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Minería CPU (p.ej. Monero/RandomX) en este contenedor", "motivo": "descartada por política: usar cómputo de un proveedor cloud ajeno para minar no está autorizado"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Resolver captchas con servicios/IA para cobrar faucets", "motivo": "descartada por política: evadir controles anti-bot viola los términos de cada sitio"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Bounties de código (GitHub/Algora) y micro-tareas pagas", "motivo": "descartada por política: el cobro exige identidad humana verificada (KYC / Stripe / PayPal)"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "decisión", "evento": "fuentes viables", "cantidad": 0}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "ejecución", "evento": "no hay ruta legal y sin intervención humana; no se reclama nada"}
+{"ts": "2026-09-26T20:38:10+00:00", "fase": "verificación", "evento": "saldo on-chain", "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac", "sats": 0, "btc_usd": 84070, "usd": 0.0, "txs": 0}
+{"ts": "2026-09-26T20:38:10+00:00", "fase": "fin", "evento": "meta 0.01 USD: NO LOGRADO", "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac"}
