@@ -1,0 +1,124 @@
+{"ts": "2026-09-26T20:38:06+00:00", "fase": "inicio", "evento": "ejecución", "meta_usd": 0.01, "python": "3.11.15"}
+{"ts": "2026-09-26T20:38:06+00:00", "fase": "billetera", "evento": "autotest BIP-173 OK"}
+{"ts": "2026-09-26T20:38:06+00:00", "fase": "billetera", "evento": "generada", "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac", "clave_privada": "(guardada en .wallet/, fuera de git)"}
+{"ts": "2026-09-26T20:38:06+00:00", "fase": "mapeo", "evento": "sondeando fuentes", "total": 10}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet BTC testnet4 (faucet.testnet4.dev)", "motivo": "exige captcha; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet BTC testnet (coinfaucet.eu)", "motivo": "exige captcha; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet ETH Sepolia (Alchemy)", "motivo": "exige captcha; exige cuenta/login; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet ETH Sepolia (sepoliafaucet.com)", "motivo": "exige captcha; exige cuenta/login; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Micro-faucets mainnet (FaucetPay)", "motivo": "exige captcha; exige cuenta/login"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet BTC mainnet (freebitco.in)", "motivo": "inaccesible (HTTP 502)"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Lightning (lightningfaucet.com)", "motivo": "exige captcha; exige cuenta/login"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Minería CPU (p.ej. Monero/RandomX) en este contenedor", "motivo": "descartada por política: usar cómputo de un proveedor cloud ajeno para minar no está autorizado"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Resolver captchas con servicios/IA para cobrar faucets", "motivo": "descartada por política: evadir controles anti-bot viola los términos de cada sitio"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Bounties de código (GitHub/Algora) y micro-tareas pagas", "motivo": "descartada por política: el cobro exige identidad humana verificada (KYC / Stripe / PayPal)"}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "decisión", "evento": "fuentes viables", "cantidad": 0}
+{"ts": "2026-09-26T20:38:09+00:00", "fase": "ejecución", "evento": "no hay ruta legal y sin intervención humana; no se reclama nada"}
+{"ts": "2026-09-26T20:38:10+00:00", "fase": "verificación", "evento": "saldo on-chain", "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac", "sats": 0, "btc_usd": 84070, "usd": 0.0, "txs": 0}
+{"ts": "2026-09-26T20:38:10+00:00", "fase": "fin", "evento": "meta 0.01 USD: NO LOGRADO", "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac"}
+{"ts": "2026-09-26T20:48:32+00:00", "fase": "inicio", "evento": "ejecución", "meta_usd": 0.01, "python": "3.11.15"}
+{"ts": "2026-09-26T20:48:32+00:00", "fase": "billetera", "evento": "autotest BIP-173 OK"}
+{"ts": "2026-09-26T20:48:32+00:00", "fase": "billetera", "evento": "reutilizada", "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac"}
+{"ts": "2026-09-26T20:48:32+00:00", "fase": "mapeo", "evento": "sondeando fuentes", "total": 14}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet BTC testnet4 (faucet.testnet4.dev)", "motivo": "exige captcha; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet BTC testnet (coinfaucet.eu)", "motivo": "exige captcha; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet ETH Sepolia (Alchemy)", "motivo": "exige captcha; exige cuenta/login; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet ETH Sepolia (sepoliafaucet.com)", "motivo": "exige captcha; exige cuenta/login; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Micro-faucets mainnet (FaucetPay)", "motivo": "exige captcha; exige cuenta/login"}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet BTC mainnet (freebitco.in)", "motivo": "inaccesible (HTTP 502)"}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Lightning (lightningfaucet.com)", "motivo": "exige captcha; exige cuenta/login"}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "mapeo", "evento": "viable", "fuente": "Faucet Nano (faucet.xnopay.com)", "motivo": "sin bloqueos detectados"}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Nano (freenanofaucet.com)", "motivo": "exige captcha; exige cuenta/login"}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Nano (nanospace.fun)", "motivo": "exige captcha"}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "The Nano Button (thenanobutton.com)", "motivo": "exige captcha"}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Minería CPU (p.ej. Monero/RandomX) en este contenedor", "motivo": "descartada por política: usar cómputo de un proveedor cloud ajeno para minar no está autorizado"}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Resolver captchas con servicios/IA para cobrar faucets", "motivo": "descartada por política: evadir controles anti-bot viola los términos de cada sitio"}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Bounties de código (GitHub/Algora) y micro-tareas pagas", "motivo": "descartada por política: el cobro exige identidad humana verificada (KYC / Stripe / PayPal)"}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Nano (nanodrop.io, API /api/status)", "motivo": "exige hCaptcha; un reclamo = 0.0001 XNO ≈ USD 0.000038; llegar a USD 0.01 exigiría 265 reclamos (abuso del faucet, pensado para uno por persona)"}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Bounties para agentes (task-bounty.com, API /api/v1/tasks)", "motivo": "0 tareas abiertas; el registro del operador exige una cuenta humana"}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Bounties para agentes (Superteam Earn, API /api/agents)", "motivo": "0 listados abiertos a agentes; ganar depende del jurado del sponsor y el cobro lo reclama un humano con el claimCode"}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Salidas anyone-can-spend de Bitcoin (Pay-to-Anchor)", "motivo": "4771278 salidas históricas, 4771276 ya barridas; 822 sats sin gastar en cadena y 131 sats ya en disputa en mempool. Son el mecanismo de ajuste de comisión (CPFP) de otros: competir por ellas sabotea su transacción, así que se descarta"}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "decisión", "evento": "fuentes viables", "cantidad": 1, "oportunidades": []}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "ejecución", "evento": "fuente viable sin integrador implementado", "fuentes": ["Faucet Nano (faucet.xnopay.com)"]}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "verificación", "evento": "saldo on-chain", "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac", "sats": 0, "btc_usd": 83921, "usd": 0.0, "txs": 0}
+{"ts": "2026-09-26T20:48:43+00:00", "fase": "fin", "evento": "meta 0.01 USD: NO LOGRADO", "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac"}
+{"ts": "2026-09-26T20:49:01+00:00", "fase": "inicio", "evento": "ejecución", "meta_usd": 0.01, "python": "3.11.15"}
+{"ts": "2026-09-26T20:49:01+00:00", "fase": "billetera", "evento": "autotest BIP-173 OK"}
+{"ts": "2026-09-26T20:49:01+00:00", "fase": "billetera", "evento": "reutilizada", "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac"}
+{"ts": "2026-09-26T20:49:01+00:00", "fase": "mapeo", "evento": "sondeando fuentes", "total": 14}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet BTC testnet4 (faucet.testnet4.dev)", "motivo": "exige captcha; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet BTC testnet (coinfaucet.eu)", "motivo": "exige captcha; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet ETH Sepolia (Alchemy)", "motivo": "exige captcha; exige cuenta/login; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet ETH Sepolia (sepoliafaucet.com)", "motivo": "exige captcha; exige cuenta/login; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Micro-faucets mainnet (FaucetPay)", "motivo": "exige captcha; exige cuenta/login"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet BTC mainnet (freebitco.in)", "motivo": "inaccesible (HTTP 502)"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Lightning (lightningfaucet.com)", "motivo": "exige captcha; exige cuenta/login"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Nano (faucet.xnopay.com)", "motivo": "exige captcha (cargado desde su JavaScript)"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Nano (freenanofaucet.com)", "motivo": "exige captcha; exige cuenta/login"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Nano (nanospace.fun)", "motivo": "exige captcha"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "The Nano Button (thenanobutton.com)", "motivo": "exige captcha"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Minería CPU (p.ej. Monero/RandomX) en este contenedor", "motivo": "descartada por política: usar cómputo de un proveedor cloud ajeno para minar no está autorizado"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Resolver captchas con servicios/IA para cobrar faucets", "motivo": "descartada por política: evadir controles anti-bot viola los términos de cada sitio"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Bounties de código (GitHub/Algora) y micro-tareas pagas", "motivo": "descartada por política: el cobro exige identidad humana verificada (KYC / Stripe / PayPal)"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Nano (nanodrop.io, API /api/status)", "motivo": "exige hCaptcha; un reclamo = 0.0001 XNO ≈ USD 0.000038; llegar a USD 0.01 exigiría 265 reclamos (abuso del faucet, pensado para uno por persona)"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Bounties para agentes (task-bounty.com, API /api/v1/tasks)", "motivo": "0 tareas abiertas; el registro del operador exige una cuenta humana"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Bounties para agentes (Superteam Earn, API /api/agents)", "motivo": "0 listados abiertos a agentes; ganar depende del jurado del sponsor y el cobro lo reclama un humano con el claimCode"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Salidas anyone-can-spend de Bitcoin (Pay-to-Anchor)", "motivo": "4771278 salidas históricas, 4771276 ya barridas; 822 sats sin gastar en cadena y 342 sats ya en disputa en mempool. Son el mecanismo de ajuste de comisión (CPFP) de otros: competir por ellas sabotea su transacción, así que se descarta"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "decisión", "evento": "fuentes viables", "cantidad": 0, "oportunidades": []}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "ejecución", "evento": "no hay ruta legal y sin intervención humana; no se reclama nada"}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "red", "evento": "reintento", "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd", "status": 429, "intento": 1}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "verificación", "evento": "saldo on-chain", "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac", "sats": 0, "btc_usd": 83858, "usd": 0.0, "txs": 0}
+{"ts": "2026-09-26T20:49:12+00:00", "fase": "fin", "evento": "meta 0.01 USD: NO LOGRADO", "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac"}
+{"ts": "2026-09-26T20:49:32+00:00", "fase": "inicio", "evento": "ejecución", "meta_usd": 0.01, "python": "3.11.15"}
+{"ts": "2026-09-26T20:49:32+00:00", "fase": "billetera", "evento": "autotest BIP-173 OK"}
+{"ts": "2026-09-26T20:49:32+00:00", "fase": "billetera", "evento": "dirección fija (clave en custodia del dueño)", "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac"}
+{"ts": "2026-09-26T20:49:32+00:00", "fase": "mapeo", "evento": "sondeando fuentes", "total": 14}
+{"ts": "2026-09-26T20:49:43+00:00", "fase": "mapeo", "evento": "agente registrado en Superteam Earn", "username": "centavo-agent-wispy-72"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet BTC testnet4 (faucet.testnet4.dev)", "motivo": "exige captcha; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet BTC testnet (coinfaucet.eu)", "motivo": "exige captcha; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet ETH Sepolia (Alchemy)", "motivo": "exige captcha; exige cuenta/login; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet ETH Sepolia (sepoliafaucet.com)", "motivo": "exige captcha; exige cuenta/login; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Micro-faucets mainnet (FaucetPay)", "motivo": "exige captcha; exige cuenta/login"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet BTC mainnet (freebitco.in)", "motivo": "inaccesible (HTTP 502)"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Lightning (lightningfaucet.com)", "motivo": "exige captcha; exige cuenta/login"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Nano (faucet.xnopay.com)", "motivo": "exige captcha (cargado desde su JavaScript)"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Nano (freenanofaucet.com)", "motivo": "exige captcha; exige cuenta/login"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Nano (nanospace.fun)", "motivo": "exige captcha"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "The Nano Button (thenanobutton.com)", "motivo": "exige captcha"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Minería CPU (p.ej. Monero/RandomX) en este contenedor", "motivo": "descartada por política: usar cómputo de un proveedor cloud ajeno para minar no está autorizado"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Resolver captchas con servicios/IA para cobrar faucets", "motivo": "descartada por política: evadir controles anti-bot viola los términos de cada sitio"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Bounties de código (GitHub/Algora) y micro-tareas pagas", "motivo": "descartada por política: el cobro exige identidad humana verificada (KYC / Stripe / PayPal)"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Nano (nanodrop.io, API /api/status)", "motivo": "exige hCaptcha; un reclamo = 0.0001 XNO ≈ USD 0.000038; llegar a USD 0.01 exigiría 265 reclamos (abuso del faucet, pensado para uno por persona)"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Bounties para agentes (task-bounty.com, API /api/v1/tasks)", "motivo": "0 tareas abiertas; el registro del operador exige una cuenta humana"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Bounties para agentes (Superteam Earn, API /api/agents)", "motivo": "0 listados abiertos a agentes; ganar depende del jurado del sponsor y el cobro lo reclama un humano con el claimCode"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Salidas anyone-can-spend de Bitcoin (Pay-to-Anchor)", "motivo": "4771278 salidas históricas, 4771276 ya barridas; 822 sats sin gastar en cadena y 822 sats ya en disputa en mempool. Son el mecanismo de ajuste de comisión (CPFP) de otros: competir por ellas sabotea su transacción, así que se descarta"}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "decisión", "evento": "fuentes viables", "cantidad": 0, "oportunidades": []}
+{"ts": "2026-09-26T20:49:44+00:00", "fase": "ejecución", "evento": "no hay ruta legal y sin intervención humana; no se reclama nada"}
+{"ts": "2026-09-26T20:49:45+00:00", "fase": "verificación", "evento": "saldo on-chain", "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac", "sats": 0, "btc_usd": 83858, "usd": 0.0, "txs": 0}
+{"ts": "2026-09-26T20:49:45+00:00", "fase": "fin", "evento": "meta 0.01 USD: NO LOGRADO", "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac"}
+{"ts": "2026-09-26T20:50:12+00:00", "fase": "inicio", "evento": "ejecución", "meta_usd": 0.01, "python": "3.11.15"}
+{"ts": "2026-09-26T20:50:12+00:00", "fase": "billetera", "evento": "autotest BIP-173 OK"}
+{"ts": "2026-09-26T20:50:12+00:00", "fase": "billetera", "evento": "reutilizada", "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac"}
+{"ts": "2026-09-26T20:50:12+00:00", "fase": "mapeo", "evento": "sondeando fuentes", "total": 14}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet BTC testnet4 (faucet.testnet4.dev)", "motivo": "exige captcha; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet BTC testnet (coinfaucet.eu)", "motivo": "exige captcha; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet ETH Sepolia (Alchemy)", "motivo": "exige captcha; exige cuenta/login; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet ETH Sepolia (sepoliafaucet.com)", "motivo": "exige captcha; exige cuenta/login; activo de testnet: valor de mercado $0 por diseño"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Micro-faucets mainnet (FaucetPay)", "motivo": "exige captcha; exige cuenta/login"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet BTC mainnet (freebitco.in)", "motivo": "inaccesible (HTTP 502)"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Lightning (lightningfaucet.com)", "motivo": "exige captcha; exige cuenta/login"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Nano (faucet.xnopay.com)", "motivo": "exige captcha (cargado desde su JavaScript)"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Nano (freenanofaucet.com)", "motivo": "exige captcha; exige cuenta/login"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Nano (nanospace.fun)", "motivo": "exige captcha"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "The Nano Button (thenanobutton.com)", "motivo": "exige captcha"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Minería CPU (p.ej. Monero/RandomX) en este contenedor", "motivo": "descartada por política: usar cómputo de un proveedor cloud ajeno para minar no está autorizado"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Resolver captchas con servicios/IA para cobrar faucets", "motivo": "descartada por política: evadir controles anti-bot viola los términos de cada sitio"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Bounties de código (GitHub/Algora) y micro-tareas pagas", "motivo": "descartada por política: el cobro exige identidad humana verificada (KYC / Stripe / PayPal)"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Faucet Nano (nanodrop.io, API /api/status)", "motivo": "exige hCaptcha; un reclamo = 0.0001 XNO ≈ USD 0.000038; llegar a USD 0.01 exigiría 265 reclamos (abuso del faucet, pensado para uno por persona)"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Bounties para agentes (task-bounty.com, API /api/v1/tasks)", "motivo": "0 tareas abiertas; el registro del operador exige una cuenta humana"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Bounties para agentes (Superteam Earn, API /api/agents)", "motivo": "0 listados abiertos a agentes; ganar depende del jurado del sponsor y el cobro lo reclama un humano con el claimCode"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "mapeo", "evento": "descartada", "fuente": "Salidas anyone-can-spend de Bitcoin (Pay-to-Anchor)", "motivo": "4771278 salidas históricas, 4771276 ya barridas; 822 sats sin gastar en cadena y 822 sats ya en disputa en mempool. Son el mecanismo de ajuste de comisión (CPFP) de otros: competir por ellas sabotea su transacción, así que se descarta"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "decisión", "evento": "fuentes viables", "cantidad": 0, "oportunidades": []}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "ejecución", "evento": "no hay ruta legal y sin intervención humana; no se reclama nada"}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "verificación", "evento": "saldo on-chain", "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac", "sats": 0, "btc_usd": 83857, "usd": 0.0, "txs": 0}
+{"ts": "2026-09-26T20:50:22+00:00", "fase": "fin", "evento": "meta 0.01 USD: NO LOGRADO", "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac"}

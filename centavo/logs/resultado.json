@@ -1,0 +1,126 @@
+{
+  "estado": "NO LOGRADO",
+  "direccion": "bc1qj2f75ef72llucsm87wmvw3r4m4zv3mcguyccac",
+  "saldo": {
+    "sats": 0,
+    "btc_usd": 83857,
+    "usd": 0.0,
+    "txs": 0
+  },
+  "fuentes": [
+    {
+      "fuente": "Faucet BTC testnet4 (faucet.testnet4.dev)",
+      "url": "https://faucet.testnet4.dev/",
+      "http": 200,
+      "viable": false,
+      "motivo": "exige captcha; activo de testnet: valor de mercado $0 por diseño"
+    },
+    {
+      "fuente": "Faucet BTC testnet (coinfaucet.eu)",
+      "url": "https://coinfaucet.eu/en/btc-testnet/",
+      "http": 200,
+      "viable": false,
+      "motivo": "exige captcha; activo de testnet: valor de mercado $0 por diseño"
+    },
+    {
+      "fuente": "Faucet ETH Sepolia (Alchemy)",
+      "url": "https://www.alchemy.com/faucets/ethereum-sepolia",
+      "http": 200,
+      "viable": false,
+      "motivo": "exige captcha; exige cuenta/login; activo de testnet: valor de mercado $0 por diseño"
+    },
+    {
+      "fuente": "Faucet ETH Sepolia (sepoliafaucet.com)",
+      "url": "https://sepoliafaucet.com/",
+      "http": 200,
+      "viable": false,
+      "motivo": "exige captcha; exige cuenta/login; activo de testnet: valor de mercado $0 por diseño"
+    },
+    {
+      "fuente": "Micro-faucets mainnet (FaucetPay)",
+      "url": "https://faucetpay.io/",
+      "http": 200,
+      "viable": false,
+      "motivo": "exige captcha; exige cuenta/login"
+    },
+    {
+      "fuente": "Faucet BTC mainnet (freebitco.in)",
+      "url": "https://freebitco.in/",
+      "http": 502,
+      "viable": false,
+      "motivo": "inaccesible (HTTP 502)"
+    },
+    {
+      "fuente": "Faucet Lightning (lightningfaucet.com)",
+      "url": "https://lightningfaucet.com/",
+      "http": 200,
+      "viable": false,
+      "motivo": "exige captcha; exige cuenta/login"
+    },
+    {
+      "fuente": "Faucet Nano (faucet.xnopay.com)",
+      "url": "https://faucet.xnopay.com/",
+      "http": 200,
+      "viable": false,
+      "motivo": "exige captcha (cargado desde su JavaScript)"
+    },
+    {
+      "fuente": "Faucet Nano (freenanofaucet.com)",
+      "url": "https://freenanofaucet.com/",
+      "http": 200,
+      "viable": false,
+      "motivo": "exige captcha; exige cuenta/login"
+    },
+    {
+      "fuente": "Faucet Nano (nanospace.fun)",
+      "url": "https://nanospace.fun/",
+      "http": 200,
+      "viable": false,
+      "motivo": "exige captcha"
+    },
+    {
+      "fuente": "The Nano Button (thenanobutton.com)",
+      "url": "https://thenanobutton.com/",
+      "http": 200,
+      "viable": false,
+      "motivo": "exige captcha"
+    },
+    {
+      "fuente": "Minería CPU (p.ej. Monero/RandomX) en este contenedor",
+      "viable": false,
+      "motivo": "descartada por política: usar cómputo de un proveedor cloud ajeno para minar no está autorizado"
+    },
+    {
+      "fuente": "Resolver captchas con servicios/IA para cobrar faucets",
+      "viable": false,
+      "motivo": "descartada por política: evadir controles anti-bot viola los términos de cada sitio"
+    },
+    {
+      "fuente": "Bounties de código (GitHub/Algora) y micro-tareas pagas",
+      "viable": false,
+      "motivo": "descartada por política: el cobro exige identidad humana verificada (KYC / Stripe / PayPal)"
+    },
+    {
+      "fuente": "Faucet Nano (nanodrop.io, API /api/status)",
+      "viable": false,
+      "motivo": "exige hCaptcha; un reclamo = 0.0001 XNO ≈ USD 0.000038; llegar a USD 0.01 exigiría 265 reclamos (abuso del faucet, pensado para uno por persona)"
+    },
+    {
+      "fuente": "Bounties para agentes (task-bounty.com, API /api/v1/tasks)",
+      "viable": false,
+      "oportunidad": false,
+      "motivo": "0 tareas abiertas; el registro del operador exige una cuenta humana"
+    },
+    {
+      "fuente": "Bounties para agentes (Superteam Earn, API /api/agents)",
+      "viable": false,
+      "oportunidad": false,
+      "motivo": "0 listados abiertos a agentes; ganar depende del jurado del sponsor y el cobro lo reclama un humano con el claimCode"
+    },
+    {
+      "fuente": "Salidas anyone-can-spend de Bitcoin (Pay-to-Anchor)",
+      "viable": false,
+      "motivo": "4771278 salidas históricas, 4771276 ya barridas; 822 sats sin gastar en cadena y 822 sats ya en disputa en mempool. Son el mecanismo de ajuste de comisión (CPFP) de otros: competir por ellas sabotea su transacción, así que se descarta"
+    }
+  ]
+}
