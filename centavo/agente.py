@@ -32,6 +32,7 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 DIR_WALLET = os.path.join(AQUI, ".wallet")
 DIR_LOGS = os.path.join(AQUI, "logs")
 LOG = os.path.join(DIR_LOGS, "auditoria.jsonl")
+DESTINO = os.path.join(AQUI, "destino.txt")
 META_USD = 0.01
 UA = "Mozilla/5.0 (X11; Linux x86_64) centavo-agent/1.0"
 
@@ -54,9 +55,9 @@ def _ctx():
     return ssl.create_default_context(cafile=cafile) if cafile else ssl.create_default_context()
 
 
-def http_get(url, timeout=15):
+def http_get(url, timeout=15, headers=None, data=None):
     """Devuelve (status, cuerpo_texto). Nunca lanza por errores de red."""
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    req = urllib.request.Request(url, data=data, headers={"User-Agent": UA, **(headers or {})})
     try:
         with urllib.request.urlopen(req, timeout=timeout, context=_ctx()) as r:
             return r.status, r.read(2_000_000).decode("utf-8", "replace")
@@ -64,6 +65,11 @@ def http_get(url, timeout=15):
         return e.code, e.read(200_000).decode("utf-8", "replace")
     except Exception as e:  # timeout, DNS, TLS...
         return 0, f"{type(e).__name__}: {e}"
+
+
+def http_post(url, payload):
+    return http_get(url, data=json.dumps(payload).encode(),
+                    headers={"Content-Type": "application/json"})
 
 
 def http_json(url, reintentos=3):
@@ -168,6 +174,13 @@ def obtener_billetera():
             w = json.load(f)
         audit("billetera", "reutilizada", direccion=w["direccion"])
         return w
+    # En un contenedor nuevo la clave local no existe: se usa la dirección ya
+    # publicada (su clave la custodia el dueño) en vez de crear otra.
+    if os.path.exists(DESTINO):
+        with open(DESTINO) as f:
+            addr = f.read().strip()
+        audit("billetera", "dirección fija (clave en custodia del dueño)", direccion=addr)
+        return {"direccion": addr}
     priv = secrets.randbelow(N - 1) + 1
     addr, pub = direccion_desde_clave(priv)
     w = {"red": "bitcoin-mainnet", "tipo": "P2WPKH", "direccion": addr,
@@ -190,6 +203,10 @@ FUENTES = [
     ("Micro-faucets mainnet (FaucetPay)", "https://faucetpay.io/", True, None),
     ("Faucet BTC mainnet (freebitco.in)", "https://freebitco.in/", True, None),
     ("Faucet Lightning (lightningfaucet.com)", "https://lightningfaucet.com/", True, None),
+    ("Faucet Nano (faucet.xnopay.com)", "https://faucet.xnopay.com/", True, None),
+    ("Faucet Nano (freenanofaucet.com)", "https://freenanofaucet.com/", True, None),
+    ("Faucet Nano (nanospace.fun)", "https://nanospace.fun/", True, None),
+    ("The Nano Button (thenanobutton.com)", "https://thenanobutton.com/", True, None),
     ("Minería CPU (p.ej. Monero/RandomX) en este contenedor", None, True,
      "usar cómputo de un proveedor cloud ajeno para minar no está autorizado"),
     ("Resolver captchas con servicios/IA para cobrar faucets", None, True,
@@ -202,6 +219,17 @@ PATRONES_CAPTCHA = re.compile(r"h-?captcha|recaptcha|turnstile|cf-chl|captcha", 
 PATRONES_LOGIN = re.compile(r"sign[ -]?in|log[ -]?in|iniciar sesi|register|kyc", re.I)
 
 
+def captcha_en_scripts(url, html, maximo=20):
+    """Muchos faucets montan el captcha desde el bundle JS, no desde el HTML."""
+    origen = re.match(r"https?://[^/]+", url).group(0)
+    srcs = re.findall(r'src="(/[^"]+\.js)[^"]*"', html)
+    for src in srcs[:maximo]:
+        st, js = http_get(origen + src)
+        if st == 200 and PATRONES_CAPTCHA.search(js):
+            return True
+    return False
+
+
 def clasificar(nombre, url, valor, politica):
     if politica:
         return {"fuente": nombre, "viable": False, "motivo": f"descartada por política: {politica}"}
@@ -211,6 +239,8 @@ def clasificar(nombre, url, valor, politica):
         señales.append(f"inaccesible (HTTP {st})")
     if PATRONES_CAPTCHA.search(body):
         señales.append("exige captcha")
+    elif st == 200 and captcha_en_scripts(url, body):
+        señales.append("exige captcha (cargado desde su JavaScript)")
     if PATRONES_LOGIN.search(body):
         señales.append("exige cuenta/login")
     if st in (301, 302, 403) and not señales:
@@ -219,6 +249,95 @@ def clasificar(nombre, url, valor, politica):
         señales.append("activo de testnet: valor de mercado $0 por diseño")
     return {"fuente": nombre, "url": url, "http": st, "viable": not señales,
             "motivo": "; ".join(señales) or "sin bloqueos detectados"}
+
+
+# ── sondas por API (estado real, no solo la portada) ───────────────────────
+# Cada sonda devuelve el mismo formato que clasificar(). "oportunidad" marca una
+# fuente legítima que hoy no paga sola pero conviene revisar en cada corrida.
+
+def _precio(coin):
+    p = http_json(f"https://api.coingecko.com/api/v3/simple/price?ids={coin}&vs_currencies=usd")
+    return p[coin]["usd"] if p else None
+
+
+def sonda_nanodrop():
+    """NanoDrop expone /api/status: monto por reclamo y si exige hCaptcha."""
+    nombre = "Faucet Nano (nanodrop.io, API /api/status)"
+    st = http_json("https://nanodrop.io/api/status")
+    xno = _precio("nano")
+    if st is None or xno is None:
+        return {"fuente": nombre, "viable": False, "motivo": "API o precio no disponibles"}
+    usd = float(st["amountNano"]) * xno
+    señales = []
+    if st.get("verificationRequired"):
+        señales.append("exige hCaptcha")
+    if usd < META_USD:
+        señales.append(f"un reclamo = {st['amountNano']} XNO ≈ USD {usd:.6f}; "
+                       f"llegar a USD {META_USD} exigiría {int(META_USD / usd) + 1} reclamos "
+                       "(abuso del faucet, pensado para uno por persona)")
+    return {"fuente": nombre, "viable": not señales, "motivo": "; ".join(señales) or "ok"}
+
+
+def sonda_taskbounty():
+    """TaskBounty: bugs reales verificados por tests, pago cripto automático."""
+    nombre = "Bounties para agentes (task-bounty.com, API /api/v1/tasks)"
+    d = http_json("https://www.task-bounty.com/api/v1/tasks")
+    if d is None:
+        return {"fuente": nombre, "viable": False, "motivo": "API no disponible"}
+    n = len(d.get("data") or [])
+    return {"fuente": nombre, "viable": False, "oportunidad": n > 0,
+            "motivo": f"{n} tareas abiertas; el registro del operador exige una cuenta humana"}
+
+
+def sonda_superteam():
+    """Superteam Earn: API oficial para agentes (registro sin humano)."""
+    nombre = "Bounties para agentes (Superteam Earn, API /api/agents)"
+    ruta = os.path.join(DIR_WALLET, "superteam.json")
+    key = os.environ.get("SUPERTEAM_API_KEY")
+    if not key and os.path.exists(ruta):
+        with open(ruta) as f:
+            key = json.load(f)["apiKey"]
+    if not key and os.environ.get("CENTAVO_REGISTRAR") == "1":
+        st, body = http_post("https://superteam.fun/api/agents", {"name": "centavo-agent"})
+        if st not in (200, 201):
+            return {"fuente": nombre, "viable": False, "motivo": f"registro falló (HTTP {st})"}
+        os.makedirs(DIR_WALLET, mode=0o700, exist_ok=True)
+        fd = os.open(ruta, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+        with os.fdopen(fd, "w") as f:
+            f.write(body)
+        key = json.loads(body)["apiKey"]
+        audit("mapeo", "agente registrado en Superteam Earn", username=json.loads(body)["username"])
+    if not key:
+        # No se registra un agente nuevo en cada contenedor efímero.
+        return {"fuente": nombre, "viable": False,
+                "motivo": "sin API key (defina SUPERTEAM_API_KEY, o CENTAVO_REGISTRAR=1 para registrar uno)"}
+    st, body = http_get("https://superteam.fun/api/agents/listings/live?take=50",
+                        headers={"Authorization": f"Bearer {key}"})
+    if st != 200:
+        return {"fuente": nombre, "viable": False, "motivo": f"API respondió HTTP {st}"}
+    n = len(json.loads(body))
+    return {"fuente": nombre, "viable": False, "oportunidad": n > 0,
+            "motivo": f"{n} listados abiertos a agentes; ganar depende del jurado del sponsor "
+                      "y el cobro lo reclama un humano con el claimCode"}
+
+
+def sonda_anclas_p2a():
+    """Salidas Pay-to-Anchor (bc1pfeessrawgf): 'anyone-can-spend' por protocolo."""
+    nombre = "Salidas anyone-can-spend de Bitcoin (Pay-to-Anchor)"
+    d = http_json("https://mempool.space/api/address/bc1pfeessrawgf")
+    if d is None:
+        return {"fuente": nombre, "viable": False, "motivo": "API no disponible"}
+    cs, ms = d["chain_stats"], d["mempool_stats"]
+    libres = cs["funded_txo_sum"] - cs["spent_txo_sum"]
+    en_disputa = ms["spent_txo_sum"] - ms["funded_txo_sum"]
+    return {"fuente": nombre, "viable": False,
+            "motivo": f"{cs['funded_txo_count']} salidas históricas, {cs['spent_txo_count']} ya barridas; "
+                      f"{libres} sats sin gastar en cadena y {max(en_disputa, 0)} sats ya en disputa en mempool. "
+                      "Son el mecanismo de ajuste de comisión (CPFP) de otros: competir por ellas "
+                      "sabotea su transacción, así que se descarta"}
+
+
+SONDAS = [sonda_nanodrop, sonda_taskbounty, sonda_superteam, sonda_anclas_p2a]
 
 
 # ── verificación on-chain ──────────────────────────────────────────────────
@@ -247,13 +366,14 @@ def main():
     w = obtener_billetera()
 
     audit("mapeo", "sondeando fuentes", total=len(FUENTES))
-    resultados = [clasificar(*f) for f in FUENTES]
+    resultados = [clasificar(*f) for f in FUENTES] + [sonda() for sonda in SONDAS]
     for r in resultados:
-        audit("mapeo", "viable" if r["viable"] else "descartada",
-              fuente=r["fuente"], motivo=r["motivo"])
+        estado = "viable" if r["viable"] else "oportunidad" if r.get("oportunidad") else "descartada"
+        audit("mapeo", estado, fuente=r["fuente"], motivo=r["motivo"])
 
     viables = [r for r in resultados if r["viable"]]
-    audit("decisión", "fuentes viables", cantidad=len(viables))
+    oportunidades = [r["fuente"] for r in resultados if r.get("oportunidad")]
+    audit("decisión", "fuentes viables", cantidad=len(viables), oportunidades=oportunidades)
     if viables:
         # Punto de extensión: aquí iría el reclamo automático de la fuente viable.
         audit("ejecución", "fuente viable sin integrador implementado",
