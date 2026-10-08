@@ -99,7 +99,9 @@ Una ficha de admisión, cinco atracciones en cualquier orden y una raspadita fin
 | Premio mayor | Raspadita de verdad en canvas que revela la producción completa |
 
 Al raspar se hace de noche y aparecen el certificado, un teaser sonoro en el género
-que tocó, la **ficha del tema** (para sacarle captura y mandarla) y la carta.
+que tocó, la **ficha del tema** (para sacarle captura y mandarla), un vale para
+juntarse cuando ella quiera (o irse a Mar Azul a hacer un tema) y la carta. El
+género sorteado es solo un chiste: el de verdad lo elige ella.
 Un altavoz del parque va comentando lo que hacés, hay 15 figuritas para coleccionar
 (las repetidas no se cambian) y algunos secretos: tocar las letras del cartel,
 tocar el nombre del ticket, escribir "kala".

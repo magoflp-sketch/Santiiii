@@ -402,6 +402,17 @@ h1,h2,h3{margin:0}
 .sign{font:400 30px/1 var(--disp);color:var(--pink);margin-top:6px;text-shadow:-1.5px -1.5px 0 var(--ink),1.5px -1.5px 0 var(--ink),-1.5px 1.5px 0 var(--ink),1.5px 1.5px 0 var(--ink)}
 .footer{margin:46px 0 0;text-align:center;font:500 11px/1.6 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--on-bg2)}
 
+/* vale mar azul */
+.vale{position:relative;background:linear-gradient(170deg,#9BE8F7,#79D6F6 55%,#FFE8A3);border:4px solid var(--ink);border-radius:22px;box-shadow:var(--sh2);padding:20px 18px 16px;color:var(--ink);overflow:hidden}
+.vale::after{content:"";position:absolute;left:-6px;right:-6px;bottom:-1px;height:22px;opacity:.55;background:radial-gradient(circle 14px at 14px 22px,#fff 13px,transparent 14px) 0 0/28px 22px repeat-x;pointer-events:none}
+.vale .vk{margin:0;font:500 11px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase}
+.vale .vt{margin:6px 0 12px;font:400 clamp(26px,8vw,38px)/.95 var(--disp);color:var(--tomato);text-shadow:-2px -2px 0 var(--ink),2px -2px 0 var(--ink),-2px 2px 0 var(--ink),2px 2px 0 var(--ink),3px 4px 0 var(--ink);text-wrap:balance}
+.vale .vrow{display:grid;grid-template-columns:76px 1fr;gap:10px;padding:9px 0;border-top:2px dashed #1b103055;align-items:baseline}
+.vale .vrow b{font:500 10.5px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.vale .vrow span{font-size:16px;line-height:1.35}
+.vale .vrow u{text-decoration:none;font-weight:800;background:linear-gradient(transparent 58%,var(--sun) 58%)}
+.vale .vf{margin:8px 0 14px;font:500 11px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+
 /* ── modales / figuritas ──────────────────── */
 .modal{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:16px;background:rgba(27,16,48,.72);animation:fade .25s}
 @keyframes fade{from{opacity:0}}
@@ -692,9 +703,12 @@ var CONFIG={
     'Hasta acá fue todo chiste. Bueno, casi todo.',
     'Un tema es de las cosas más lindas que se pueden regalar: algo que antes no existía, que lleva tu nombre y que va a seguir sonando cuando nos hayamos olvidado de este parque.',
     'Elegí regalarte esto porque es lo que mejor sé hacer, y porque sos de esas personas a las que uno quiere regalarles lo mejor que sabe hacer.',
+    'El género lo elegís vos: el que quieras, el que te salga, o tres mezclados. La rueda era un chiste.',
     'Te voy a escuchar. Te voy a bancar las cuarenta tomas. Te voy a decir que sí cuando suene bien y que todavía no cuando falte. Y cuando esté terminado, va a sonar a vos. No a mí, no a una plantilla: a vos.',
+    'Cuando quieras nos juntamos. O nos vamos a Mar Azul, hacemos un tema y nos divertimos mucho.',
     'Gracias por estar, por el aguante y por dejar que te moleste. Es mi forma de querer, y ya sabés que me sale bastante mal y bastante seguido.',
-    'Ahora sacale captura a la ficha de arriba, mandámela y fijamos fecha. El parque queda abierto. Siempre. Para vos.'
+    'Ahora sacale captura a la ficha de arriba, mandámela y fijamos fecha. El parque queda abierto. Siempre. Para vos.',
+    'Y que lo sepas: te amo mucho.'
   ],
   signoff:'— Dale, vamos a grabar.'
 };
@@ -2052,7 +2066,7 @@ var RIDES=[
   function accept(){
     if(!pending||accepted)return;accepted=true;
     S.genre=GEN[pending].name;S.genreKey=pending;save();
-    complete('wheel','DESTINO ACEPTADO','Tu tema va a ser <b>'+esc(GEN[pending].name)+'</b>. '+esc(TXT[pending])+'<br><br><small>Sorteo no vinculante: lo charlamos en el estudio.</small>','rueda');
+    complete('wheel','DESTINO ACEPTADO','Tu tema va a ser <b>'+esc(GEN[pending].name)+'</b>. '+esc(TXT[pending])+'<br><br><small>Sorteo no vinculante: el género de verdad lo elegís vos.</small>','rueda');
   }
   $('#w-spin').addEventListener('click',spin);
   $('#w-ok').addEventListener('click',function(){snd('click');accept()});
@@ -2253,6 +2267,7 @@ var RIDES=[
         '<p style="margin:0;font-size:17.5px;max-width:48ch">De la idea al master. '+esc(CONFIG.from)+' del lado de la consola, vos del lado del micrófono. Sin fecha de vencimiento, pero con fecha de arranque: la que vos digas.</p>'+
         '<div class="ledger">'+
           row('Pre-producción','Nos sentamos a ordenar la idea. Con tu ficha, tu referencia y tu comida ya sabemos por dónde arrancar.')+
+          row('Género','El que vos quieras: cuarteto, reggaetón, balada o los tres mezclados. La rueda era un chiste; acá manda la artista.')+
           row('Composición','Ayuda con la letra, la melodía y la estructura, hasta que el tema diga lo que querés decir (y no lo que dijo la tragamonedas).')+
           row('Grabación','Todas las tomas que hagan falta, con '+esc(food.toLowerCase())+' de por medio. Sin apuro y sin juicios.')+
           row('Edición','Te limpiamos los ruidos. A tu voz no se la toca.')+
@@ -2264,7 +2279,7 @@ var RIDES=[
       '</div>'+
 
       '<div class="sect"><h3>Esto es un teaser</h3>'+
-        '<p class="lead">Armado con el género que te tocó en la rueda y con tu nombre cantado por un robot. Lo de verdad va a sonar muchísimo mejor. Prometo.</p>'+
+        '<p class="lead">Armado con el género que te tocó en la rueda (el de verdad lo elegís vos) y con tu nombre cantado por un robot. Lo de verdad va a sonar muchísimo mejor. Prometo.</p>'+
         '<div class="panel"><div class="player"><button class="btn teal" id="tz-btn">▶ ESCUCHAR</button><canvas class="viz" id="viz" height="54" aria-hidden="true"></canvas></div>'+
         '<p class="fine" style="color:var(--ink2)" id="tz-info">Género: '+esc(S.genre||'Reggaetón')+' · 8 compases · sintetizado en tu navegador mientras leías</p></div></div>'+
 
@@ -2274,7 +2289,7 @@ var RIDES=[
           '<div class="top"><span>Kala Records · Ficha de producción</span><span>N.º 001</span></div>'+
           '<div class="tt"><small>Título provisorio</small><h4 id="sl-title">'+esc(S.title)+'</h4></div>'+
           '<div class="rows">'+
-            '<div><b>Género</b><span>'+esc(gen)+'</span></div>'+
+            '<div><b>Género</b><span>El que vos quieras ✓<br><small style="color:var(--ink2)">La rueda dijo '+esc(S.genre||'cualquier cosa')+', pero acá manda la artista.</small></span></div>'+
             '<div><b>Estribillo</b><span>'+(S.line?'“'+esc(S.line)+'”':'— (la tragamonedas se quedó callada)')+'</span></div>'+
             '<div><b>Referencia</b><span>'+esc(ref)+'</span></div>'+
             '<div><b>Rider</b><span>'+esc(food)+'</span></div>'+
@@ -2289,6 +2304,13 @@ var RIDES=[
         '</div>'+
         '<div class="btnrow" style="justify-content:center;margin-top:16px"><button class="btn pink small" id="sl-dice">OTRO TÍTULO</button></div>'+
       '</div>'+
+
+      '<div class="sect"><h3>Cuándo y dónde</h3>'+
+        '<div class="vale"><p class="vk">Vale por</p><p class="vt">UN TEMA, CUANDO Y DONDE VOS QUIERAS</p>'+
+          '<div class="vrow"><b>Cuándo</b><span>Cuando quieras. Me avisás y nos juntamos.</span></div>'+
+          '<div class="vrow"><b>Dónde</b><span>Donde quieras. O nos vamos a <u>Mar Azul</u>, hacemos un tema y nos divertimos mucho.</span></div>'+
+          '<div class="vrow"><b>Género</b><span>El que quieras.</span></div>'+
+          '<p class="vf">Sin apuro, sin fecha de vencimiento y sin letra chica.</p></div></div>'+
 
       '<div class="sect"><h3>Ahora en serio</h3>'+
         '<div class="panel"><div class="letter">'+letter+'<p class="sign">'+esc(fmt(CONFIG.signoff))+'</p></div></div>'+
