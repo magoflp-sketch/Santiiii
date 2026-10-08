@@ -108,7 +108,9 @@ tocar el nombre del ticket, escribir "kala".
 
 ## Detalles técnicos
 
-- HTML + CSS + JS vanilla en un solo archivo, sin librerías.
+- HTML + CSS + JS vanilla en un solo archivo, sin librerías. A diferencia de los otros dos,
+  este es un documento completo (doctype, vista previa para WhatsApp, `noindex`), así que
+  se puede publicar tal cual en cualquier hosting estático.
 - Tipografías: Bagel Fat One, Bricolage Grotesque y DM Mono (Google Fonts).
 - Todo el sonido está sintetizado con Web Audio API: efectos, música de calesita,
   ocho géneros para el teaser (con un "KA-LA" cantado por formantes) y visualizador.
