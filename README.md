@@ -79,32 +79,36 @@ Al completar los cinco aparece la carta, la firma escrita a mano y los pétalos.
 
 # Kalalandia (`kala.html`)
 
-Regalo para Kala: la producción completa de un tema. Es un parque de diversiones
-privado, con una sola visitante, donde cada atracción es una etapa real de
-producir un tema (con más ruido y menos dignidad). El humor es de cargada con
-cariño, y al final hay una carta en serio.
+Regalo para Kala: la producción completa de un tema. Pero la página no lo dice:
+al principio es solo un parque de diversiones privado, con una sola visitante, y
+cinco juegos de feria. El regalo aparece recién al raspar la tarjeta final, y
+ahí se revela el truco: los juegos eran la ficha del tema disfrazada (la
+canción que no se saca de la cabeza es la referencia, la frase de la
+tragamonedas es el estribillo, la comida es el rider). Los textos están
+escritos como Mago hablándole por un altavoz, en tono de chat, y el altavoz a
+veces se equivoca al tipear y se corrige solo.
 
 ## Qué es
 
-Una ficha de admisión, cinco atracciones en cualquier orden y una raspadita final:
+Una ficha de admisión, cinco juegos en cualquier orden y una raspadita final:
 
 | Parte | Interacción |
 |---|---|
-| Boletería | Ficha (nombre, comida de la sesión, tema de referencia, nivel de diva); imprime un ticket que se arranca tirando de la parte roja |
-| El Kala-sino | Tragamonedas de estribillos; arranca "fuera de servicio" y hay que golpearla tres veces |
-| La Grúa | Máquina de peluches en canvas; la garra falla a propósito hasta que se apiada |
-| Topos | Aplastar ruidos en 30 segundos sin pegarle a "tu voz"; baja la exigencia si fallás |
-| La Rueda | Sorteo de género; la primera tirada es siempre QUIEBRA y cada género suena unos segundos |
-| La Mesa | Cuatro faders en su franja verde; la cantante pide "subime la voz" y el fader no se deja bajar |
+| Boletería | Ficha (nombre, comida, canción que no se saca de la cabeza, nivel de diva); imprime un ticket que se arranca tirando de la parte roja |
+| El Kala-sino | Tragamonedas de frases absurdas; arranca "fuera de servicio" y hay que pegarle tres veces |
+| La Grúa | Máquina de peluches en canvas; la garra falla a propósito hasta que se apiada, y el premio es la copa de oro |
+| Topos | Aplastar excusas en 30 segundos sin pegarle a "tu risa"; baja la exigencia si fallás |
+| La Rueda | Sorteo de la música de la fiesta; la primera tirada es siempre QUIEBRA y cada género suena unos segundos |
+| La Consola | Cuatro perillas en su franja verde; "vos" pedís más volumen y la perilla no se deja bajar |
 | Premio mayor | Raspadita de verdad en canvas que revela la producción completa |
 
-Al raspar se hace de noche y aparecen el certificado, un teaser sonoro en el género
-que tocó, la **ficha del tema** (para sacarle captura y mandarla), un vale para
-juntarse cuando ella quiera (o irse a Mar Azul a hacer un tema) y la carta. El
-género sorteado es solo un chiste: el de verdad lo elige ella.
-Un altavoz del parque va comentando lo que hacés, hay 15 figuritas para coleccionar
-(las repetidas no se cambian) y algunos secretos: tocar las letras del cartel,
-tocar el nombre del ticket, escribir "kala".
+Al raspar se hace de noche y aparecen el certificado, la explicación del truco,
+un teaser sonoro en el género que tocó, la **ficha del tema** (para sacarle
+captura y mandarla), un vale para juntarse cuando ella quiera (o irse a Mar Azul
+a hacer un tema) y la carta. El género sorteado es solo un chiste: el de verdad
+lo elige ella. Hay 15 figuritas para coleccionar (las repetidas no se cambian) y
+algunos secretos: tocar las letras del cartel, tocar el nombre del ticket,
+escribir "kala".
 
 ## Detalles técnicos
 
